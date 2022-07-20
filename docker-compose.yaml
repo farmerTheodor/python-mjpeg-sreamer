@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  image_stream:
+    environment:
+      KAFKA_URL: kafka0:29092
+      KAFKA_TOPIC: jpg_stream
+      KAFKA_KEY: 1
+    build:
+      context: .
+
+networks:
+  default:
+    name: skyviewer
+    driver: bridge
